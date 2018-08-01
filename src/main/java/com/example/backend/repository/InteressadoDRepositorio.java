@@ -14,7 +14,7 @@ import com.example.backend.model.InteressadosDisciplina;
 @Repository
 @Transactional
 public interface InteressadoDRepositorio extends JpaRepository<InteressadosDisciplina, String> {
-	@Query("SELECT i.n_disciplina FROM InteressadosDisciplina i WHERE LOWER(i.aluno_matricula) LIKE CONCAT('%', LOWER(:text), '%')")
+	@Query("SELECT n_disciplina FROM InteressadosDisciplina i WHERE aluno_matricula = text")
 	public List<InteressadosDisciplina> FindByMatricula(@Param("text") String text);
 
 }
