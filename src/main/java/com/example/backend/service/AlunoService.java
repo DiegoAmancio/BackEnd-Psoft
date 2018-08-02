@@ -17,7 +17,7 @@ public class AlunoService {
 	private AlunoRepositorio alunoRepositorio;
 
 	public List<Aluno> todasMatriculas() {
-		return alunoRepositorio.findAlunos();
+		return alunoRepositorio.findAll();
 	}
 
 	public Boolean cadastrarAluno(Aluno aluno) {
