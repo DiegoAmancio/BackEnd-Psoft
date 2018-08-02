@@ -28,7 +28,7 @@ public class ControllerAluno {
 	@Autowired
 	AlunoService alunoService;
 
-	@RequestMapping(value = "/", method = RequestMethod.GET)
+	@RequestMapping(value = "", method = RequestMethod.GET)
 	public List<Aluno> todasMatriculas() {
 		return alunoService.todasMatriculas();
 	}
@@ -43,7 +43,7 @@ public class ControllerAluno {
 
 	}
 
-	@RequestMapping(value = "/", method = RequestMethod.POST)
+	@RequestMapping(value = "", method = RequestMethod.POST)
 	public HttpStatus cadastrarAluno(@RequestBody Aluno aluno) {
 
 		Boolean cadastrou = alunoService.cadastrarAluno(aluno);

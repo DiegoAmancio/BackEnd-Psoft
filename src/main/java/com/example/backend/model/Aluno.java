@@ -22,7 +22,7 @@ public class Aluno {
 	private String email;
 
 	@OneToMany(cascade = CascadeType.ALL,fetch=FetchType.LAZY) 
-	@JoinColumn(name = "cadeiras_aluno")
+	@JoinColumn(name = "codigo_disciplina")
 	private Set<Disciplina> cadeiras;
 
 	public Aluno() {
