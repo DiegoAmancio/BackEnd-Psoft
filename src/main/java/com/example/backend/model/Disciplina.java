@@ -1,11 +1,9 @@
 package com.example.backend.model;
 
 import java.io.Serializable;
+import java.util.Set;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
 
 @Entity
 @Table(name = "disciplina")
@@ -16,22 +14,26 @@ public class Disciplina implements Serializable {
 	private static final long serialVersionUID = -6497987270939165315L;
 
 	@Id
+	@Column(name = "codigo_disciplina")
 	private Integer codigo_disciplina;
 
-	@Column(nullable = false)
+	@Column(nullable = false, name = "disciplina")
 	private String disciplina;
 
-	@Column
+	@Column(name = "semestre")
 	private double semestre;
 
-	@Column
+	@Column(name = "horas")
 	private double horas;
 
-	@Column
+	@Column(name = "creditos")
 	private int creditos;
 
-	@Column
+	@Column(name = "grade")
 	private String grade;
+
+	@OneToMany(mappedBy = "cadeiras")
+	Set<Aluno> users;
 
 	public Disciplina() {
 

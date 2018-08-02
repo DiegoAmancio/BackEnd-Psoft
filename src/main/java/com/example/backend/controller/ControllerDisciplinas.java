@@ -12,12 +12,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.example.backend.model.Aluno;
 import com.example.backend.model.Disciplina;
-import com.example.backend.model.InteressadosDisciplina;
 import com.example.backend.service.AlunoService;
 import com.example.backend.service.DisciplinaService;
-import com.example.backend.service.InteressadoDService;
 
 @RestController
 @RequestMapping(value = "/disciplinas")
@@ -47,7 +44,6 @@ public class ControllerDisciplinas {
 		return HttpStatus.NOT_FOUND;
 	}
 
-	
 	@RequestMapping(value = "/", method = RequestMethod.DELETE)
 	public HttpStatus delete(@RequestBody Integer id) {
 		if (disciplinaService.deletarDisciplina(id)) {
@@ -55,11 +51,5 @@ public class ControllerDisciplinas {
 		}
 		return HttpStatus.NOT_FOUND;
 	}
-
-	
-
-	
-
-	
 
 }
