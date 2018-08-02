@@ -20,7 +20,7 @@ public class InteressadoDService {
 	}
 
 	public List<InteressadosDisciplina> cadeirasEscolhidas(String matricula) {
-		return alunosInteressados.FindByMatricula(matricula);
+		return alunosInteressados.findAll();
 
 	}
 

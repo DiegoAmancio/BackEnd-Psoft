@@ -27,8 +27,6 @@ public class ControllerDisciplinas {
 	DisciplinaService disciplinaService;
 	@Autowired
 	AlunoService alunoService;
-	@Autowired
-	private InteressadoDService alunosInteressados;
 
 	@RequestMapping(value = "/", method = RequestMethod.GET)
 	public List<Disciplina> listar() {
@@ -49,6 +47,7 @@ public class ControllerDisciplinas {
 		return HttpStatus.NOT_FOUND;
 	}
 
+	
 	@RequestMapping(value = "/", method = RequestMethod.DELETE)
 	public HttpStatus delete(@RequestBody Integer id) {
 		if (disciplinaService.deletarDisciplina(id)) {
@@ -57,30 +56,10 @@ public class ControllerDisciplinas {
 		return HttpStatus.NOT_FOUND;
 	}
 
-	/**
-	 * METODO PUT DE DISCIPLINA
-	 */
+	
 
-	@RequestMapping(value = "disciplinas/{matricula}", method = RequestMethod.GET)
-	public List<InteressadosDisciplina> cadeirasAluno(@PathVariable("matricula") String matricula) {
+	
 
-		return alunosInteressados.cadeirasEscolhidas(matricula);
-
-	}
-
-	@RequestMapping(value = "disciplinas/{matricula}", method = RequestMethod.POST)
-	public HttpStatus cadastrarCadeiraInteresse(@RequestBody Integer codigo,
-			@PathVariable("matricula") String matricula) {
-
-		Optional<Disciplina> disciplina = disciplinaService.findById(codigo);
-		Optional<Aluno> aluno = alunoService.getAluno(matricula);
-		if (disciplina.isPresent() && aluno.isPresent()) {
-			alunosInteressados.cadastrarInteresse(codigo, matricula);
-			return HttpStatus.OK;
-		}
-
-		return HttpStatus.NOT_FOUND;
-
-	}
+	
 
 }

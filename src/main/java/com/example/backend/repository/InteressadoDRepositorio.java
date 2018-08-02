@@ -14,7 +14,8 @@ import com.example.backend.model.InteressadosDisciplina;
 @Repository
 @Transactional
 public interface InteressadoDRepositorio extends JpaRepository<InteressadosDisciplina, String> {
-	@Query("SELECT n_disciplina FROM InteressadosDisciplina i WHERE aluno_matricula = text")
-	public List<InteressadosDisciplina> FindByMatricula(@Param("text") String text);
+	
+	@Query("SELECT i FROM InteressadosDisciplina i WHERE i.aluno_matricula = matricula")
+	public List<InteressadosDisciplina> FindByMatricula(@Param("matricula") String matricula);
 
 }
