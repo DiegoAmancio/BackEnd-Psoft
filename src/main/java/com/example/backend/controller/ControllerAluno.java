@@ -61,7 +61,7 @@ public class ControllerAluno {
 	}
 
 	@RequestMapping(value = "/{matricula}", method = RequestMethod.POST)
-	public HttpStatus cadastrarCadeiraInteresse(@RequestBody Integer codigo,
+	public HttpStatus cadastrarCadeiraInteresse(@RequestBody int codigo,
 			@PathVariable("matricula") String matricula) {
 
 		Optional<Disciplina> disciplina = disciplinaService.findById(codigo);

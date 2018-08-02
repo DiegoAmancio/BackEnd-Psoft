@@ -9,7 +9,7 @@ import javax.persistence.*;
 public class Aluno {
 
 	@Id
-	@Column(nullable = false, name = "matricula")
+	@Column(name = "matricula")
 	private String matricula;
 
 	@Column(nullable = false, name = "nome_completo")
@@ -22,7 +22,7 @@ public class Aluno {
 	private String email;
 
 	@OneToMany(cascade = CascadeType.ALL,fetch=FetchType.LAZY) 
-	@JoinColumn(name = "codigo_disciplina")
+	@JoinColumn(name = "cadeiras_aluno")
 	private Set<Disciplina> cadeiras;
 
 	public Aluno() {

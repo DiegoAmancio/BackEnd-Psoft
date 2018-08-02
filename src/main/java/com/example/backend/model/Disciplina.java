@@ -15,7 +15,7 @@ public class Disciplina implements Serializable {
 
 	@Id
 	@Column(name = "codigo_disciplina")
-	private Integer codigo_disciplina;
+	private int codigo_disciplina;
 
 	@Column(nullable = false, name = "disciplina")
 	private String disciplina;
@@ -39,7 +39,7 @@ public class Disciplina implements Serializable {
 
 	}
 
-	public Disciplina(Integer codigo_disciplina, String disciplina, double semestre, double horas, int creditos,
+	public Disciplina(int codigo_disciplina, String disciplina, double semestre, double horas, int creditos,
 			String grade) {
 		super();
 		this.codigo_disciplina = codigo_disciplina;
@@ -54,7 +54,7 @@ public class Disciplina implements Serializable {
 		return codigo_disciplina;
 	}
 
-	public void setCodigo_disciplina(Integer codigo_disciplina) {
+	public void setCodigo_disciplina(int codigo_disciplina) {
 		this.codigo_disciplina = codigo_disciplina;
 	}
 
